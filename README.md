@@ -9,7 +9,7 @@ This extension assumes that you're using one of the following on any model you w
 
 #### ActiveRecord
 
-[acts_as_list](https://github.com/rails/acts_as_list)
+[acts_as_list](https://github.com/swanandp/acts_as_list)
 
 ```ruby
 class Page < ActiveRecord::Base
@@ -33,18 +33,18 @@ end
 ### Add it to your Gemfile
 
 ```ruby
-gem 'activeadmin-sortable'
+gem "activeadmin-sortable"
 ```
 
-### Include the JavaScript in active_admin.js
+### Include the JavaScript in active_admin.js.coffee
 
 ```javascript
-//= require activeadmin-sortable
+#= require activeadmin-sortable
 ```
 
-### Include the Stylesheet in active_admin.css
-```css
-//= require activeadmin-sortable
+### Include the Stylesheet in active_admin.css.scss
+```scss
+@import "activeadmin-sortable"
 ```
 
 ### Configure your ActiveAdmin Resource
