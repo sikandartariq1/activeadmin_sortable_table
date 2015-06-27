@@ -6,8 +6,8 @@ require 'activeadmin-sortable/version'
 Gem::Specification.new do |gem|
   gem.name          = "activeadmin-sortable"
   gem.version       = Activeadmin::Sortable::VERSION
-  gem.authors       = ["Adam McCrea"]
-  gem.email         = ["adam@adamlogic.com"]
+  gem.authors       = ["Adam McCrea", "Jonathan Gertig"]
+  gem.email         = ["adam@adamlogic.com", "jcgertig@gmail.com"]
   gem.description   = %q{Drag and drop sort interface for ActiveAdmin tables}
   gem.summary       = %q{Drag and drop sort interface for ActiveAdmin tables}
   gem.homepage      = "https://github.com/newcontext/activeadmin-sortable"
