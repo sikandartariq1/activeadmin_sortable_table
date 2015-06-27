@@ -58,6 +58,10 @@ ActiveAdmin.register Page do
 
   index do
     sortable_handle_column # inserts a drag handle
+    # use a user-defined URL for sorting
+    sortable_handle_column url: :sort_admin_section_path
+    # alternative form with lambda
+    sortable_handle_column url: -> (resource) { compute_url_from_resource(resource) }
     # other columns...
   end
 

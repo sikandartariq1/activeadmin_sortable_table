@@ -21,11 +21,18 @@ module ActiveAdmin
     module TableMethods
       HANDLE = '&#x2195;'.html_safe
 
-      def sortable_handle_column
+      def sortable_handle_column options = {}
         column '', :class => "activeadmin-sortable" do |resource|
-          sort_url, query_params = auto_url_for(resource).split '?', 2
-          sort_url += "/sort"
-          sort_url += "?" + query_params if query_params
+          sort_url = if options[:url].is_a? Symbol
+            send options[:url], resource
+          elsif options[:url].respond_to? :call
+            options[:url].call resource
+          else
+            sort_url, query_params = resource_path(resource).split '?', 2
+            sort_url += "/sort"
+            sort_url += "?" + query_params if query_params
+            sort_url
+          end
           content_tag :span, HANDLE, :class => 'handle', 'data-sort-url' => sort_url
         end
       end
