@@ -1,4 +1,4 @@
-# Active Admin Sortable
+# Active Admin Orderable
 
 This gem extends ActiveAdmin so that your index page's table rows can be
 sortable via a drag-and-drop interface.
@@ -33,18 +33,19 @@ end
 ### Add it to your Gemfile
 
 ```ruby
-gem "activeadmin-sortable"
+gem "activeadmin-orderable"
 ```
 
 ### Include the JavaScript in active_admin.js.coffee
 
-```javascript
-#= require activeadmin-sortable
+```coffeescript
+#= require activeadmin-orderable
 ```
 
 ### Include the Stylesheet in active_admin.css.scss
+
 ```scss
-@import "activeadmin-sortable"
+@import "activeadmin-orderable"
 ```
 
 ### Configure your ActiveAdmin Resource

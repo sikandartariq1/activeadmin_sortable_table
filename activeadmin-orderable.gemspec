@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'activeadmin-sortable/version'
+require 'activeadmin-orderable/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "activeadmin-sortable"
+  gem.name          = "activeadmin-orderable"
   gem.version       = Activeadmin::Sortable::VERSION
   gem.authors       = ["Adam McCrea", "Jonathan Gertig"]
   gem.email         = ["adam@adamlogic.com", "jcgertig@gmail.com"]
-  gem.description   = %q{Drag and drop sort interface for ActiveAdmin tables}
-  gem.summary       = %q{Drag and drop sort interface for ActiveAdmin tables}
-  gem.homepage      = "https://github.com/newcontext/activeadmin-sortable"
+  gem.description   = %q{Drag and drop reordering interface for ActiveAdmin tables}
+  gem.summary       = %q{Drag and drop reordering interface for ActiveAdmin tables}
+  gem.homepage      = "https://github.com/jcgertig/activeadmin-orderable"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
