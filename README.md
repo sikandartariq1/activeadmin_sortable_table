@@ -1,6 +1,6 @@
 # Active Admin Sortable
 
-This gem extends ActiveAdmin so that your index page's table rows can be 
+This gem extends ActiveAdmin so that your index page's table rows can be
 sortable via a drag-and-drop interface.
 
 ## Prerequisites
@@ -59,6 +59,21 @@ ActiveAdmin.register Page do
   index do
     sortable_handle_column # inserts a drag handle
     # other columns...
+  end
+
+  show do |c|
+    attributes_table do
+      row :id
+      row :name
+    end
+
+    panel 'Contents' do
+      table_for c.collection_memberships do
+        sortable_handle_column
+        column :position
+        column :collectable
+      end
+    end
   end
 end
 ```
