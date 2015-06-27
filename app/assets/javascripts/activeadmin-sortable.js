@@ -18,8 +18,14 @@
           url: url,
           type: 'post',
           data: $.extend(customParams, { position: ui.item.index() + 1 }),
-          error: function() { console.error("Saving sortable error"); },
-          success: function() { if (actionOnSuccess='noting') { return; } else { window.location.reload(); }}
+          error: function() { console.error('Saving sortable error'); },
+          success: function() {
+            if (actionOnSuccess === 'noting') { return; }
+
+            $("tr", $('.handle').closest('tbody')).removeClass('even odd');
+            $("tr", $('.handle').closest('tbody')).filter(":even").addClass('odd');
+            $("tr", $('.handle').closest('tbody')).filter(":odd").addClass('even');
+          }
         });
       }
     });
