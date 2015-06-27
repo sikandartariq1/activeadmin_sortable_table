@@ -1,5 +1,5 @@
 module Activeadmin
-  module Sortable
-    VERSION = "0.1.1"
+  module Orderable
+    VERSION = "0.1.2"
   end
 end

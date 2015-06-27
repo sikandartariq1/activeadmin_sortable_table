@@ -1,7 +1,7 @@
 # Active Admin Orderable
 
 This gem extends ActiveAdmin so that your index page's table rows can be
-sortable via a drag-and-drop interface.
+orderable via a drag-and-drop interface.
 
 ## Prerequisites
 
@@ -55,14 +55,14 @@ ActiveAdmin.register Page do
   config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
   config.paginate   = false # optional; drag-and-drop across pages is not supported
 
-  sortable # creates the controller action which handles the sorting
+  orderable # creates the controller action which handles the sorting
 
   index do
-    sortable_handle_column # inserts a drag handle
-    # use a user-defined URL for sorting
-    sortable_handle_column url: :sort_admin_section_path
+    orderable_handle_column # inserts a drag handle
+    # use a user-defined URL for ordering
+    orderable_handle_column url: :sort_admin_section_path
     # alternative form with lambda
-    sortable_handle_column url: -> (resource) { compute_url_from_resource(resource) }
+    orderable_handle_column url: -> (resource) { compute_url_from_resource(resource) }
     # other columns...
   end
 
@@ -74,7 +74,7 @@ ActiveAdmin.register Page do
 
     panel 'Contents' do
       table_for c.collection_memberships do
-        sortable_handle_column
+        orderable_handle_column
         column :position
         column :collectable
       end
