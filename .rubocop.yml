@@ -13,11 +13,3 @@ AllCops:
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
   Max: 120
-
-
-# Offense count: 4
-# Configuration parameters: Exclude.
-Style/Documentation:
-  Exclude:
-    - 'lib/active_admin/sortable_table/version.rb'
-    - 'lib/activeadmin_sortable_table.rb'
