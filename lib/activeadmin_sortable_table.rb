@@ -1,14 +1,14 @@
-require 'activeadmin-orderable/version'
 require 'activeadmin'
+require 'active_admin/sortable_table/version'
 require 'rails/engine'
 
 module ActiveAdmin
-  module Orderable
+  module SortableTable
     module ControllerActions
       def orderable
         member_action :sort, :method => :post do
-          if defined?(::Mongoid::Orderable) &&
-            resource.class.included_modules.include?(::Mongoid::Orderable)
+          if defined?(::Mongoid::SortableTable) &&
+            resource.class.included_modules.include?(::Mongoid::SortableTable)
               resource.move_to! params[:position].to_i
           else
             resource.insert_at params[:position].to_i
@@ -22,7 +22,7 @@ module ActiveAdmin
       HANDLE = '&#9776;'.html_safe
 
       def orderable_handle_column options = {}
-        column '', :class => "activeadmin-orderable" do |resource|
+        column '', :class => "activeadmin_sortable_table" do |resource|
           sort_url = if options[:url].is_a? Symbol
             send options[:url], resource
           elsif options[:url].respond_to? :call

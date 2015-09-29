@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-require 'activeadmin-orderable'
+require 'activeadmin_sortable_table'
 
 module Dummy
   class Application < Rails::Application

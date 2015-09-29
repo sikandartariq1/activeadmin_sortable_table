@@ -1,4 +1,6 @@
-# Active Admin Orderable
+[![Build Status](https://travis-ci.org/bolshakov/activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/activeadmin_sortable_table)
+
+# Active Admin Sortable Table
 
 This gem extends ActiveAdmin so that your index page's table rows can be
 orderable via a drag-and-drop interface.
@@ -33,19 +35,19 @@ end
 ### Add it to your Gemfile
 
 ```ruby
-gem "activeadmin-orderable"
+gem "activeadmin_sortable_table"
 ```
 
 ### Include the JavaScript in active_admin.js.coffee
 
 ```coffeescript
-#= require activeadmin-orderable
+#= require activeadmin_sortable_table
 ```
 
 ### Include the Stylesheet in active_admin.css.scss
 
 ```scss
-@import "activeadmin-orderable"
+@import "activeadmin_sortable_table"
 ```
 
 ### Configure your ActiveAdmin Resource
