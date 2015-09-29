@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bolshakov/activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/activeadmin_sortable_table)
+
 # Active Admin Sortable Table
 
 This gem extends ActiveAdmin so that your index page's table rows can be
