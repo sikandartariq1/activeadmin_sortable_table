@@ -19,7 +19,7 @@ module ActiveAdmin
     end
 
     module TableMethods
-      HANDLE = '&#x2195;'.html_safe
+      HANDLE = '&#9776;'.html_safe
 
       def orderable_handle_column options = {}
         column '', :class => "activeadmin-orderable" do |resource|
