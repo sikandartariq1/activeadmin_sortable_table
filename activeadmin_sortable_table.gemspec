@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['adam@adamlogic.com', 'jcgertig@gmail.com', 'abolshakov@spbtv.com']
   gem.description   = 'Drag and drop reordering interface for ActiveAdmin tables'
   gem.summary       = 'Drag and drop reordering interface for ActiveAdmin tables'
+  gem.license       = 'MIT'
   gem.homepage      = 'https://github.com/bolshakov/activeadmin_sortable_table'
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
