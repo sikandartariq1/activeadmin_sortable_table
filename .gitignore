@@ -8,7 +8,6 @@ spec/dummy/db/test.sqlite3
 .bundle
 .config
 .yardoc
-Gemfile.lock
 InstalledFiles
 _yardoc
 coverage
