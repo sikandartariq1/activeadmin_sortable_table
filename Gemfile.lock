@@ -21,6 +21,7 @@ PATH
   specs:
     activeadmin_sortable_table (1.0.0)
       activeadmin (>= 1.0.0.pre1)
+      uber (= 0.0.15)
 
 GEM
   remote: https://rubygems.org/
@@ -218,6 +219,7 @@ GEM
     tilt (2.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     websocket-driver (0.6.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)

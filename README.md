@@ -53,9 +53,9 @@ ActiveAdmin.register Page do
   index do
     handle_column # inserts a drag handle
     # use a user-defined URL for ordering
-    handle_column url: :sort_admin_section_path
+    handle_column sort_url: :sort_admin_section_path
     # alternative form with lambda
-    handle_column url: -> (resource) { compute_url_from_resource(resource) }
+    handle_column sort_url: -> (resource) { compute_url_from_resource(resource) }
     # other columns...
   end
 
@@ -78,15 +78,12 @@ end
 
 ### Overriding handler
 
-You can override handler column symbol using CSS:
+You can override handler column symbol using handle_column options:
 
-```css
-/* active_admin.css.scss */
-@import "activeadmin_sortable_table";
-
-.activeadmin_sortable_table .handle:before {
-   content: '☰';
-}
+```ruby
+index do
+  handle_column sort_handle: '&#9776;'.html_safe
+end
 ```
 
 ## Contributing
