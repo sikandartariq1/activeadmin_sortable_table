@@ -1,1 +1,11 @@
-.activeadmin_sortable_table .handle { cursor: ns-resize; }
+.activeadmin_sortable_table .handle {
+    cursor: ns-resize;
+    position: relative;
+    padding-left: 1.25em;
+}
+
+.activeadmin_sortable_table .handle:before {
+    content: '\2630';
+    font-size: 1.5em;
+    position: absolute;
+}

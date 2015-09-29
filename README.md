@@ -74,6 +74,19 @@ ActiveAdmin.register Page do
 end
 ```
 
+### Overriding handler
+
+You can override handler column symbol using CSS:
+
+```css
+/* active_admin.css.scss */
+@import "activeadmin_sortable_table";
+
+.activeadmin_sortable_table .handle:before {
+   content: '☰';
+}
+```
+
 ## Contributing
 
 1. Fork it

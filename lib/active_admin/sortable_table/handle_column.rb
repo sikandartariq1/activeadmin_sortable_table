@@ -16,14 +16,12 @@ module ActiveAdmin
     #   end
     #
     module HandleColumn
-      HANDLE = '&#9776;'.html_safe
-
       # @param [Hash] options
       # @option options [Symbol, Proc, String] :url
       #
       def handle_column(options = {})
         column '', class: 'activeadmin_sortable_table' do |resource|
-          content_tag :span, HANDLE, class: 'handle', 'data-sort-url' => sort_url(options[:url], resource)
+          content_tag :span, '', class: 'handle', 'data-sort-url' => sort_url(options[:url], resource)
         end
       end
 
