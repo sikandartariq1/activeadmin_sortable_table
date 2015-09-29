@@ -1,4 +1,4 @@
-RSpec.describe 'ActiveAdmin::Orderable', type: :feature do
+RSpec.describe 'ActiveAdmin::SortableTable', type: :feature do
   let!(:bottom) { Category.create!(name: 'bottom', position: 0) }
   let!(:top) { Category.create!(name: 'top', position: 1) }
   let!(:middle) { Category.create!(name: 'middle', position: 2) }

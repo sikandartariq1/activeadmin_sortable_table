@@ -1,9 +1,9 @@
 (function($) {
   $(document).ready(function() {
-    $('.handle').closest('tbody').activeAdminSortable();
+    $('.handle').closest('tbody').activeAdminSortableTable();
   });
 
-  $.fn.activeAdminSortable = function() {
+  $.fn.activeAdminSortableTable = function() {
     this.sortable({
       update: function(event, ui) {
         var item = ui.item.find('[data-sort-url]');
