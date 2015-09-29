@@ -38,16 +38,17 @@ module ActiveAdmin
         column '', class: 'activeadmin_sortable_table' do |resource|
           options = defined_options.evaluate(self, resource)
 
-          sort_handle(options) + move_to_top_handle(options)
+          sort_handle(options, resource.position) + move_to_top_handle(options)
         end
       end
 
       private
 
-      def sort_handle(options)
+      def sort_handle(options, position)
         content_tag(:span, options[:sort_handle],
                     class: 'handle',
                     'data-sort-url' => options[:sort_url],
+                    'data-position' => position,
                     title: 'Drag to reorder'
                    )
       end

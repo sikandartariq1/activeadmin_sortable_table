@@ -17,7 +17,7 @@
         $.ajax({
           url: url,
           type: 'post',
-          data: $.extend(customParams, { position: ui.item.index() + 1 }),
+          data: $.extend(customParams, { position: ui.item.find('[data-position]').data('position') - 1 }),
           error: function() { console.error('Saving sortable error'); },
           success: function() {
             if (actionOnSuccess === 'noting') { return; }
