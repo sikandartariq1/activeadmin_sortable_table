@@ -17,5 +17,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'activeadmin', '>= 0.4'
+  gem.add_dependency 'activeadmin', '>= 1.0.0.pre1'
+  gem.add_development_dependency 'rails', '~> 4.2'
+  gem.add_development_dependency 'capybara'
+  gem.add_development_dependency 'rspec-rails', '~> 3.3'
+  gem.add_development_dependency 'phantomjs'
+  gem.add_development_dependency 'poltergeist'
+  gem.add_development_dependency 'database_cleaner'
+  gem.add_development_dependency 'launchy'
 end
