@@ -9,17 +9,40 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
     Category.order(:position).pluck(:id)
   end
 
-  it 'reorder elements by dragging vertically', js: true do
-    expect(ordered_elements).to eq([1, 2, 3])
+  context 'first page' do
+    it 'reorder elements by dragging vertically', js: true do
+      expect(ordered_elements).to eq([1, 2, 3])
 
-    visit admin_categories_path
+      visit admin_categories_path
 
-    expect(visible_elements).to eq([1, 2, 3])
+      expect(visible_elements).to eq([1, 2, 3])
 
-    move_higher(2)
+      move_higher(2)
 
-    expect(visible_elements).to eq([2, 1, 3])
-    expect(ordered_elements).to eq([2, 1, 3])
+      expect(visible_elements).to eq([2, 1, 3])
+      expect(ordered_elements).to eq([2, 1, 3])
+    end
+  end
+
+  context 'second page' do
+    before do
+      Category.create!
+      Category.create!
+      Category.create!
+    end
+
+    it 'reorder elements by dragging vertically', js: true do
+      expect(ordered_elements).to eq([1, 2, 3, 4, 5, 6])
+
+      visit admin_categories_path(page: 2)
+
+      expect(visible_elements).to eq([4, 5, 6])
+
+      move_higher(5)
+
+      expect(visible_elements).to eq([5, 4, 6])
+      expect(ordered_elements).to eq([1, 2, 3, 5, 4, 6])
+    end
   end
 
   private
