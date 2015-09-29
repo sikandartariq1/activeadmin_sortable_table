@@ -19,17 +19,6 @@ class Page < ActiveRecord::Base
 end
 ```
 
-#### Mongoid
-
-[mongoid_orderable](https://github.com/pyromaniac/mongoid_orderable)
-
-```ruby
-class Page < ActiveRecord::Base
-  include Mongoid::Orderable
-  orderable
-end
-```
-
 ## Usage
 
 ### Add it to your Gemfile
@@ -54,17 +43,17 @@ gem "activeadmin_sortable_table"
 
 ```ruby
 ActiveAdmin.register Page do
+  include ActiveAdmin::SortableTable # creates the controller action which handles the sorting
   config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
-  config.paginate   = false # optional; drag-and-drop across pages is not supported
-
-  orderable # creates the controller action which handles the sorting
+  config.paginate = false # optional; drag-and-drop across pages is not supported
+  permit_params :position # do not forget to add `position` attribute to permitted prams
 
   index do
-    orderable_handle_column # inserts a drag handle
+    handle_column # inserts a drag handle
     # use a user-defined URL for ordering
-    orderable_handle_column url: :sort_admin_section_path
+    handle_column url: :sort_admin_section_path
     # alternative form with lambda
-    orderable_handle_column url: -> (resource) { compute_url_from_resource(resource) }
+    handle_column url: -> (resource) { compute_url_from_resource(resource) }
     # other columns...
   end
 
@@ -76,7 +65,7 @@ ActiveAdmin.register Page do
 
     panel 'Contents' do
       table_for c.collection_memberships do
-        orderable_handle_column
+        handle_column
         column :position
         column :collectable
       end

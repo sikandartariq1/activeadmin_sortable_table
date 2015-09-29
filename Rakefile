@@ -1,4 +1,4 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
@@ -12,7 +12,7 @@ namespace :dummy do
   task :prepare do
     # File.expand_path is executed directory of generated Rails app
     rakefile = File.expand_path('Rakefile', dummy_path)
-    command = "rake -f '%s' db:schema:load RAILS_ENV=test" % rakefile
+    command = format("rake -f '%s' db:schema:load RAILS_ENV=test", rakefile)
     sh(command) unless ENV['DISABLE_CREATE']
   end
 
