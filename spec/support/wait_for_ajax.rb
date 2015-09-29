@@ -1,3 +1,4 @@
+# Enables ajax helpers in capybara tests
 module WaitForAjax
   def wait_for_ajax(count = 1)
     page.execute_script 'window._ajaxCalls = 0, window._ajaxCompleteCounter = function() { window._ajaxCalls += 1; }'

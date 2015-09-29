@@ -19,17 +19,6 @@ class Page < ActiveRecord::Base
 end
 ```
 
-#### Mongoid
-
-[mongoid_orderable](https://github.com/pyromaniac/mongoid_orderable)
-
-```ruby
-class Page < ActiveRecord::Base
-  include Mongoid::Orderable
-  orderable
-end
-```
-
 ## Usage
 
 ### Add it to your Gemfile
