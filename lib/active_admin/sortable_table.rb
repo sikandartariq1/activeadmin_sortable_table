@@ -31,6 +31,11 @@ module ActiveAdmin
             resource.insert_at params[:position].to_i
             head 200
           end
+
+          member_action :move_to_top, method: :post do
+            resource.move_to_top
+            redirect_to :back
+          end
         end
       end
     end
