@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bolshakov/activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/activeadmin_sortable_table)
+[![Code Climate](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/gpa.svg)](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table)
 
 # Active Admin Sortable Table
 
