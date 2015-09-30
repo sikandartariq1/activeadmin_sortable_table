@@ -81,7 +81,7 @@ You can configure `sort_url` using handle column options by providing static val
 
 ```ruby
 handle_column sort_url: ->(category) { compute_url_for_category(category) }  
-handle_column sort_url: '/admin/categories/1/sort  
+handle_column sort_url: '/admin/categories/1/sort'
 handle_column sort_url: :sort_category  
 ```
 
