@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bolshakov/activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/activeadmin_sortable_table)
+[![Test Coverage](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/coverage.svg)](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/coverage)
 [![Code Climate](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/gpa.svg)](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table)
 [![Gem Version](https://badge.fury.io/rb/activeadmin_sortable_table.svg)](http://badge.fury.io/rb/activeadmin_sortable_table)
 

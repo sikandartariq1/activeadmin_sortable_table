@@ -18,3 +18,7 @@ script:
   - bundle exec rake dummy:prepare
   - bundle exec rspec
   - bundle exec rubocop
+
+addons:
+  code_climate:
+    repo_token: 085c9fc58ac3efcd9a8b311ee77bcec0b5c048575cde8a2234f7c63550910969
