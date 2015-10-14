@@ -5,6 +5,7 @@
 
   $.fn.activeAdminSortableTable = function() {
     this.sortable({
+      handle: ".handle",
       update: function(event, ui) {
         var item = ui.item.find('[data-sort-url]');
         var url = item.data('sort-url');

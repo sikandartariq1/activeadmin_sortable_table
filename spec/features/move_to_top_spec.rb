@@ -36,7 +36,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature do
   private
 
   def visible_elements
-    all('.ui-sortable-handle .col-id').map(&:text).map(&:to_i)
+    all('.ui-sortable .col-id').map(&:text).map(&:to_i)
   end
 
   def move_to_top(element_id)
