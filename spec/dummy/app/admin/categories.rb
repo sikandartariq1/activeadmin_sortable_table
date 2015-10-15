@@ -7,6 +7,7 @@ ActiveAdmin.register Category do
   index do
     handle_column
     id_column
+    column :position
     actions
   end
 end
