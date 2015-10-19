@@ -16,10 +16,12 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
       visit admin_categories_path
 
       expect(visible_elements).to eq([1, 2, 3])
+      expect(visible_positions).to eq([1, 2, 3])
 
       move_higher(2, by_handle: true)
 
       expect(visible_elements).to eq([2, 1, 3])
+      expect(visible_positions).to eq([1, 2, 3])
       expect(ordered_elements).to eq([2, 1, 3])
     end
 
@@ -29,10 +31,12 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
       visit admin_categories_path
 
       expect(visible_elements).to eq([1, 2, 3])
+      expect(visible_positions).to eq([1, 2, 3])
 
       move_higher(2, by_handle: false)
 
       expect(visible_elements).to eq([1, 2, 3])
+      expect(visible_positions).to eq([1, 2, 3])
       expect(ordered_elements).to eq([1, 2, 3])
     end
   end
@@ -50,10 +54,12 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
       visit admin_categories_path(page: 2)
 
       expect(visible_elements).to eq([4, 5, 6])
+      expect(visible_positions).to eq([4, 5, 6])
 
       move_higher(5, by_handle: true)
 
       expect(visible_elements).to eq([5, 4, 6])
+      expect(visible_positions).to eq([4, 5, 6])
       expect(ordered_elements).to eq([1, 2, 3, 5, 4, 6])
     end
 
@@ -63,10 +69,12 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
       visit admin_categories_path(page: 2)
 
       expect(visible_elements).to eq([4, 5, 6])
+      expect(visible_positions).to eq([4, 5, 6])
 
       move_higher(5, by_handle: false)
 
       expect(visible_elements).to eq([4, 5, 6])
+      expect(visible_positions).to eq([4, 5, 6])
       expect(ordered_elements).to eq([1, 2, 3, 4, 5, 6])
     end
   end
@@ -77,18 +85,18 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
     all('.ui-sortable .col-id').map(&:text).map(&:to_i)
   end
 
+  def visible_positions
+    all('.ui-sortable .col-position').map(&:text).map(&:to_i)
+  end
+
   def move_higher(element_id, by_handle:)
     drag_element(element_id, by_handle, dy: -200)
   end
 
   def drag_element(element_id, by_handle, options)
     options.reverse_merge! moves: 20
-    if by_handle
-      wait_for_ajax do
-        page.execute_script(%($("#category_#{element_id} .handle").simulate("drag", #{options.to_json})))
-      end
-    else
-      page.execute_script(%($("#category_#{element_id}").simulate("drag", #{options.to_json})))
-    end
+    selector = by_handle ? "#category_#{element_id} .handle" : "#category_#{element_id}"
+    page.execute_script(%($("#{selector}").simulate("drag", #{options.to_json})))
+    sleep 0.1
   end
 end

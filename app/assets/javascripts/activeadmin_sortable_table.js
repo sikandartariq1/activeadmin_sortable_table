@@ -19,14 +19,11 @@
           url: url,
           type: 'post',
           data: $.extend(customParams, { position: ui.item.find('[data-position]').data('position') - 1 }),
-          error: function() { console.error('Saving sortable error'); },
-          success: function() {
-            if (actionOnSuccess === 'noting') { return; }
-
-            $("tr", $('.handle').closest('tbody')).removeClass('even odd');
-            $("tr", $('.handle').closest('tbody')).filter(":even").addClass('odd');
-            $("tr", $('.handle').closest('tbody')).filter(":odd").addClass('even');
-          }
+          error: function () { console.error('Saving sortable error'); },
+          success: function () {
+            location.href = location.href;
+          },
+          async: false
         });
       }
     });
