@@ -97,5 +97,6 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature do
     options.reverse_merge! moves: 20
     selector = by_handle ? "#category_#{element_id} .handle" : "#category_#{element_id}"
     page.execute_script(%($("#{selector}").simulate("drag", #{options.to_json})))
+    sleep 0.1
   end
 end
