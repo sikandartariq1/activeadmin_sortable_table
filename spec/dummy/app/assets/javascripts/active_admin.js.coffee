@@ -1,3 +1,3 @@
 #= require active_admin/base
-#= require jquery.simulate
+#= require jquery.simulate.drag-sortable
 #= require activeadmin_sortable_table

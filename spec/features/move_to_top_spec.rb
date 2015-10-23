@@ -1,4 +1,4 @@
-RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature do
+RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature, js: true do
   before do
     Category.create!
     Category.create!
@@ -6,37 +6,45 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature do
     Category.create!
   end
 
-  def ordered_elements
+  def ordered_ids
     Category.order(:position).pluck(:id)
   end
 
-  it 'push element to top by clicking "move to top"', js: true do
-    expect(ordered_elements).to eq([1, 2, 3, 4])
+  before do
+    expect(ordered_ids).to eq([1, 2, 3, 4])
 
     # Initially only one element on the second page
     visit admin_categories_path(page: 2)
 
-    expect(visible_elements).to contain_exactly(4)
+    expect(visible_ids).to contain_exactly(4)
+    expect(visible_positions).to contain_exactly(4)
+  end
 
+  it 'push element to top by clicking "move to top"' do
     # When I push "move to top" button
     move_to_top(4)
 
     # The last element from the previous page should be shown
     # save_and_open_page
-    expect(visible_elements).to contain_exactly(3)
+    expect(visible_ids).to contain_exactly(3)
 
     # And when I visit previous page
     visit admin_categories_path(page: 1)
 
     # I should see pushed elenent on the top
-    expect(visible_elements).to eq([4, 1, 2])
-    expect(ordered_elements).to eq([4, 1, 2, 3])
+    expect(visible_ids).to eq([4, 1, 2])
+    expect(visible_positions).to eq([1, 2, 3])
+    expect(ordered_ids).to eq([4, 1, 2, 3])
   end
 
   private
 
-  def visible_elements
+  def visible_ids
     all('.ui-sortable .col-id').map(&:text).map(&:to_i)
+  end
+
+  def visible_positions
+    all('.ui-sortable .col-position').map(&:text).map(&:to_i)
   end
 
   def move_to_top(element_id)
