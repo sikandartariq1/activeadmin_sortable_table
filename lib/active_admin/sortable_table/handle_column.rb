@@ -38,7 +38,7 @@ module ActiveAdmin
         column '', class: 'activeadmin_sortable_table' do |resource|
           options = defined_options.evaluate(self, resource)
 
-          sort_handle(options, resource.position) + move_to_top_handle(options)
+          sort_handle(options, resource.send(resource.position_column)) + move_to_top_handle(options)
         end
       end
 
