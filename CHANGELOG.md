@@ -1,3 +1,7 @@
+1.2.0
+
+  * **Feature**. Now it is possible to specify an acts_as_list column other than position @faucct 
+
 1.1.3
 
   * **Fix**. Reordering was broken.
