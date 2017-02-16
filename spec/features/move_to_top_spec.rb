@@ -7,7 +7,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature, js: tr
   end
 
   def ordered_ids
-    Category.order(:position).pluck(:id)
+    Category.order(:number).pluck(:id)
   end
 
   before do
@@ -17,7 +17,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature, js: tr
     visit admin_categories_path(page: 2)
 
     expect(visible_ids).to contain_exactly(4)
-    expect(visible_positions).to contain_exactly(4)
+    expect(visible_numbers).to contain_exactly(4)
   end
 
   it 'push element to top by clicking "move to top"' do
@@ -33,7 +33,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature, js: tr
 
     # I should see pushed elenent on the top
     expect(visible_ids).to eq([4, 1, 2])
-    expect(visible_positions).to eq([1, 2, 3])
+    expect(visible_numbers).to eq([1, 2, 3])
     expect(ordered_ids).to eq([4, 1, 2, 3])
   end
 
@@ -43,8 +43,8 @@ RSpec.describe ActiveAdmin::SortableTable, 'Move to top', type: :feature, js: tr
     all('.ui-sortable .col-id').map(&:text).map(&:to_i)
   end
 
-  def visible_positions
-    all('.ui-sortable .col-position').map(&:text).map(&:to_i)
+  def visible_numbers
+    all('.ui-sortable .col-number').map(&:text).map(&:to_i)
   end
 
   def move_to_top(element_id)

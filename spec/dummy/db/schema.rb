@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150910072505) do
 
   create_table "categories", force: :cascade do |t|
     t.string  "name"
-    t.integer "position"
+    t.integer "number"
   end
 
 end
