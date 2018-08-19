@@ -55,7 +55,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature, js: 
       end
     end
 
-    it 'can not drug not by handle' do
+    it 'can not drag not by handle' do
       move_up(3, by: 2, use_handle: false)
 
       expect(visible_ids).to eq([1, 2, 3])
@@ -116,7 +116,7 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature, js: 
       end
     end
 
-    it 'can not drug not by handle' do
+    it 'can not drag not by handle' do
       move_down(6, by: 2, use_handle: false)
 
       expect(visible_ids).to eq([4, 5, 6])

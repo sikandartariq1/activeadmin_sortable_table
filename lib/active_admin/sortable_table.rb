@@ -25,7 +25,7 @@ module ActiveAdmin
       # @param [ActiveAdmin::DSL] dsl
       # @return [void]
       #
-      def included(dsl)
+      def included(dsl) # rubocop:disable Metrics/AbcSize
         dsl.instance_eval do
           member_action :sort, method: :post do
             resource.insert_at params[:position].to_i
@@ -34,7 +34,7 @@ module ActiveAdmin
 
           member_action :move_to_top, method: :post do
             resource.move_to_top
-            redirect_to :back
+            redirect_to request.headers['HTTP_REFERER'] || collection_path
           end
         end
       end
