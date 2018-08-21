@@ -2,25 +2,19 @@ sudo: false
 language: ruby
 
 rvm:
-  - 2.1.5
-  - 2.2.2
-  - 2.4.1
-  - ruby-head
+  - 2.3.7
+  - 2.4.4
+  - 2.5.1
 
 env:
   matrix:
-    - RAILS_VERSION=4.2.8
-    - RAILS_VERSION=5.2.0
+    - RAILS_VERSION=4.2.10
+    - RAILS_VERSION=5.2.1
 
 matrix:
   allow_failures:
     - rvm: ruby-head
   fast_finish: true
-  exclude:
-  - rvm: 2.1.5
-    env: RAILS_VERSION=5.2.0
-  - rvm: 2.2.2
-    env: RAILS_VERSION=5.2.0
 
 before_install: gem update --remote bundler
 install:
