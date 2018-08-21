@@ -1,6 +1,7 @@
-1.x
+1.3.0
 
   * Test against latest supported ruby versions: 2.3.7, 2.4.4, 2.5.1 and rails versions: 4.2.10, 5.2.1.
+  * Add Rails 5 support
 
 1.2.0
 
