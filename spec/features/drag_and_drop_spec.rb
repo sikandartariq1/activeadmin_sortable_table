@@ -153,6 +153,6 @@ RSpec.describe ActiveAdmin::SortableTable, 'Drag-and-Drop', type: :feature, js: 
         $("#category_#{element_id}").simulateDragSortable({ move: #{by} })
       JS
     end
-    sleep 0.5
+    sleep 0.7
   end
 end
