@@ -18,6 +18,7 @@
 
         var nextPosition = $(nextElement).find('[data-position]').data('position');
         var currentPosition = ui.item.find('[data-position]').data('position');
+        var authToken = $('meta[name=csrf-token]').attr('content');
 
         if(nextPosition === undefined || nextPosition > currentPosition) {
           // moved down
@@ -32,7 +33,7 @@
         $.ajax({
           url: url,
           type: 'post',
-          data: $.extend(customParams, { position: newPosition }),
+          data: $.extend(customParams, { position: newPosition, authenticity_token: authToken }),
           error: function () { console.error('Saving sortable error'); },
           success: function () {
             location.href = location.href;
