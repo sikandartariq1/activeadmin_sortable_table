@@ -1,3 +1,7 @@
+1.3.1
+
+  * **Fix**. Can't verify CSRF token authenticity exception.
+
 1.3.0
 
   * Test against latest supported ruby versions: 2.3.7, 2.4.4, 2.5.1 and rails versions: 4.2.10, 5.2.1.

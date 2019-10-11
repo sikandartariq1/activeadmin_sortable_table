@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/bolshakov/activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/activeadmin_sortable_table)
-[![Test Coverage](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/coverage.svg)](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/coverage)
-[![Code Climate](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/gpa.svg)](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table)
-[![Gem Version](https://badge.fury.io/rb/activeadmin_sortable_table.svg)](http://badge.fury.io/rb/activeadmin_sortable_table)
+[![Build Status](https://travis-ci.org/bolshakov/fixed_activeadmin_sortable_table.svg?branch=master)](https://travis-ci.org/bolshakov/fixed_activeadmin_sortable_table)
+[![Test Coverage](https://codeclimate.com/github/bolshakov/activeadmin_sortable_table/badges/coverage.svg)](https://codeclimate.com/github/bolshakov/fixed_activeadmin_sortable_table/coverage)
+[![Code Climate](https://codeclimate.com/github/bolshakov/fixed_activeadmin_sortable_table/badges/gpa.svg)](https://codeclimate.com/github/bolshakov/fixed_activeadmin_sortable_table)
+[![Gem Version](https://badge.fury.io/rb/fixed_activeadmin_sortable_table.svg)](http://badge.fury.io/rb/fixed_activeadmin_sortable_table)
 
-# Active Admin Sortable Table
+# Fixed Active Admin Sortable Table
 
 This gem extends ActiveAdmin so that your index page's table rows can be
 orderable via a drag-and-drop interface.
@@ -14,6 +14,7 @@ orderable via a drag-and-drop interface.
 2. Configurable labels for handler 
 3. Move to top button allows to push any item from any page to the top of the list
 4. Sorting works on all pages ( not only on the first one)
+4. Fixed can't verify CSRF token authenticity exception.
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ end
 Add it to your Gemfile
 
 ```ruby
-gem "activeadmin_sortable_table"
+gem "fixed_activeadmin_sortable_table"
 ```
 
 Include the JavaScript in `active_admin.js.coffee`
